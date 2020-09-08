@@ -17,7 +17,7 @@ app.use(routes);
 
 // // Connect to the Mongo DB  
 mongoose.connect(
-  "mongodb+srv://philliploy:1Passw0rd@cluster0.u6psh.mongodb.net/reactreadinglist?retryWrites=true&w=majority"|| "mongodb://localhost/reactreadinglist"
+   process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist"
 );
 
 
