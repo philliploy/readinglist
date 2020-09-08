@@ -16,16 +16,12 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // // Connect to the Mongo DB  
-// mongoose.connect(
-//   process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist"
-// );
+mongoose.connect(
+  "mongodb+srv://philliploy:1Passw0rd@cluster0.u6psh.mongodb.net/reactreadinglist?retryWrites=true&w=majority"|| "mongodb://localhost/reactreadinglist"
+);
 
 
-const MongoClient = require("mongodb").MongoClient;
- const client =  new MongoClient(process.env.MONGODB_URI|| "mongodb://localhost/reactreadinglist",{ useNewUrlParser: true});
- client.connect();
-mongoose.connection.once('open', () => { console.log('MongoDB Connected'); });
-mongoose.connection.on('error', (err) => { console.log('MongoDB connection error: ', err); }); 
+  
 
 // Start the API server
 app.listen(PORT, function() {
