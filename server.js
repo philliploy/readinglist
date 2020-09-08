@@ -22,7 +22,7 @@ app.use(routes);
 
 
 const MongoClient = require("mongodb").MongoClient;
- const client = await new MongoClient(process.env.MONGODB_URI|| "mongodb://localhost/reactreadinglist",{ useNewUrlParser: true});
+ const client =  new MongoClient(process.env.MONGODB_URI|| "mongodb://localhost/reactreadinglist",{ useNewUrlParser: true});
  client.connect();
 mongoose.connection.once('open', () => { console.log('MongoDB Connected'); });
 mongoose.connection.on('error', (err) => { console.log('MongoDB connection error: ', err); }); 
